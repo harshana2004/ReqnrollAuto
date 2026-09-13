@@ -41,7 +41,7 @@ public class LoginSteps
     [Then("user is navigate to home page")]
     public void UserIsNavigateToHomePage()
     {
-        Assert.That(loginPage.getTitle(), Is.EqualTo("Let's Shop1"));
+        Assert.That(loginPage.getTitle(), Is.EqualTo("Let's Shop"));
         Console.WriteLine("!!!!!!! Homepage loaded sucessfully !!!!!!!!!");
     }
 }
