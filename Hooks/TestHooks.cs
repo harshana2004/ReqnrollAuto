@@ -21,8 +21,29 @@ public class TestHooks
     [BeforeScenario]
     public void BeforeScenario()
     {
-        Driver = new ChromeDriver();
-        Driver.Manage().Window.Maximize();
+        var options = new ChromeOptions();
+
+        if (Environment.GetEnvironmentVariable("CI") == "true")
+        {
+            // GitHub Actions / CI
+            options.AddArgument("--headless=new");
+            options.AddArgument("--no-sandbox");
+            options.AddArgument("--disable-dev-shm-usage");
+            options.AddArgument("--disable-gpu");
+            options.AddArgument("--window-size=1920,1080");
+        }
+        else
+        {
+            // Local development
+            options.AddArgument("--start-maximized");
+        }
+
+        Driver = new ChromeDriver(options);
+
+        if (Environment.GetEnvironmentVariable("CI") != "true")
+        {
+            Driver.Manage().Window.Maximize();
+        }
     }
 
     [AfterScenario]
