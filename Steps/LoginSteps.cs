@@ -23,25 +23,25 @@ public class LoginSteps
     [When("user is enters 'username'")]
     public void UserIsEntersUsername()
     {
-        loginPage.enterUsername(testSettings.Username);
+        loginPage.EnterUsername(testSettings.Username);
     }
 
     [When("user is enters 'password'")]
     public void UserIsEntersPassword()
     {
-        loginPage.enterPassword(testSettings.Password);
+        loginPage.EnterPassword(testSettings.Password);
     }
 
     [When("user is clicks login button")]
     public void UserIsClicksLoginButton()
     {
-        loginPage.clickLogin();
+        loginPage.ClickLogin();
     }
 
     [Then("user is navigate to home page")]
     public void UserIsNavigateToHomePage()
     {
-        Assert.That(loginPage.getTitle(), Is.EqualTo("Let's Shop"));
+        Assert.That(loginPage.GetTitle(), Is.EqualTo("Let's Shop"));
         Console.WriteLine("!!!!!!! Homepage loaded sucessfully !!!!!!!!!");
     }
 }

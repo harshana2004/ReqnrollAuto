@@ -1,5 +1,3 @@
-
-
 using OpenQA.Selenium;
 
 public class LoginPage
@@ -14,26 +12,26 @@ public class LoginPage
 
     private readonly By username = By.Id("userEmail");
     private readonly By password = By.Id("userPassword");
-    private readonly By loginButton = By.Id("userEmail");
+    private readonly By loginButton = By.Id("login");
 
 
 
-    public void enterUsername(String Username)
+    public void EnterUsername(String Username)
     {
         driver.FindElement(username).SendKeys(Username);
     }
 
-    public void enterPassword(String Password)
+    public void EnterPassword(String Password)
     {
         driver.FindElement(password).SendKeys(Password);
     }
 
-    public void clickLogin()
+    public void ClickLogin()
     {
         driver.FindElement(loginButton).Click();
     }
 
-    public String getTitle()
+    public String GetTitle()
     {
 
         String DashboardTitle = driver.Title;
