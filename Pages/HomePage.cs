@@ -48,19 +48,20 @@ public class HomePage
 
     public bool IsDisplayedProductDetailsPage()
     {
-        return driver.FindElement(productDetailsLabel).Displayed;
+        return wait.Until(driver =>
+    driver.FindElement(productDetailsLabel).Displayed);
     }
 
     public bool IsDisplayedOrderDetailsPage()
     {
         return wait.Until(driver =>
     driver.FindElement(orderDetailsLabel).Displayed);
-
     }
 
     public bool IsDisplayedCartDetailsPage()
     {
-        return driver.FindElement(myCartLabel).Displayed;
+        return wait.Until(driver =>
+    driver.FindElement(myCartLabel).Displayed);
     }
 
 
