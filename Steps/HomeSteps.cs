@@ -22,7 +22,6 @@ public class HomeSteps
     public void WhenTheUserClicksTheViewButtonForTheFirstProduct()
     {
         homePage.ClickProductDetails();
-        Console.WriteLine($"CURRENT URL: {TestHooks.Driver.Url}");
     }
 
 
@@ -46,7 +45,6 @@ public class HomeSteps
     public void WhenTheUserClicksTheOrdersButton()
     {
         homePage.ClickOrders();
-        Console.WriteLine($"CURRENT URL: {TestHooks.Driver.Url}");
     }
 
 
@@ -79,7 +77,6 @@ public class HomeSteps
     public void WhenTheUserClicksTheCartButton()
     {
         homePage.ClickCart();
-        Console.WriteLine($"CURRENT URL: {TestHooks.Driver.Url}");
     }
 
 
