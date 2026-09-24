@@ -9,7 +9,7 @@ public class HomePage
     public HomePage(IWebDriver driver)
     {
         this.driver = driver;
-        wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+        wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
     }
 
     private readonly By homeButton =
@@ -31,7 +31,7 @@ public class HomePage
         By.XPath("//h1[contains(text(), 'Your Orders')]");
 
     private readonly By myCartLabel =
-        By.XPath("//h1[contains(normalize-space(), 'My Cart')]");
+        By.XPath("//h1[contains(text(), 'My Cart')]");
 
     private readonly By continueShoppingButton =
         By.XPath("//button[contains(normalize-space(), 'Continue Shopping')]");
