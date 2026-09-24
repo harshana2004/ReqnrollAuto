@@ -40,7 +40,13 @@ public class TestHooks
 
         Driver = new ChromeDriver(options);
 
-        if (Environment.GetEnvironmentVariable("CI") != "true")
+        // if (Environment.GetEnvironmentVariable("CI") != "true")
+        // {
+        //     Driver.Manage().Window.Maximize();
+        // }
+
+        if (Environment.GetEnvironmentVariable("CI") != "true" &&
+           Environment.GetEnvironmentVariable("GITHUB_ACTIONS") != "true")
         {
             Driver.Manage().Window.Maximize();
         }
