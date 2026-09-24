@@ -67,15 +67,18 @@ public class HomePage
 
     public void ClickProductDetails()
     {
-
         wait.Until(driver =>
-    driver.FindElement(viewButton).Displayed);
+            driver.FindElement(viewButton).Displayed);
 
-        driver.FindElement(viewButton).Click();
+        var button = driver.FindElement(viewButton);
+
+        ((IJavaScriptExecutor)driver).ExecuteScript(
+            "arguments[0].click();",
+            button);
 
         Console.WriteLine($"PRODUCT URL AFTER CLICK: {driver.Url}");
-        Console.WriteLine($"PRODUCT TITLE AFTER CLICK: {driver.Title}");
     }
+
 
     public void ClickHomeButton()
     {
@@ -84,16 +87,26 @@ public class HomePage
 
     public void ClickOrders()
     {
-        driver.FindElement(orderButton).Click();
-        Console.WriteLine($"PRODUCT URL AFTER CLICK: {driver.Url}");
-        Console.WriteLine($"PRODUCT TITLE AFTER CLICK: {driver.Title}");
+        var button = wait.Until(driver =>
+            driver.FindElement(orderButton));
+
+        ((IJavaScriptExecutor)driver).ExecuteScript(
+            "arguments[0].click();",
+            button);
+
+        Console.WriteLine($"ORDERS URL AFTER CLICK: {driver.Url}");
     }
 
     public void ClickCart()
     {
-        driver.FindElement(cartButton).Click();
-        Console.WriteLine($"PRODUCT URL AFTER CLICK: {driver.Url}");
-        Console.WriteLine($"PRODUCT TITLE AFTER CLICK: {driver.Title}");
+        var button = wait.Until(driver =>
+            driver.FindElement(cartButton));
+
+        ((IJavaScriptExecutor)driver).ExecuteScript(
+            "arguments[0].click();",
+            button);
+
+        Console.WriteLine($"CART URL AFTER CLICK: {driver.Url}");
     }
 
     public void ClickShoppingButton()
