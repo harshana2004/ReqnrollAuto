@@ -72,6 +72,9 @@ public class HomePage
     driver.FindElement(viewButton).Displayed);
 
         driver.FindElement(viewButton).Click();
+
+        Console.WriteLine($"PRODUCT URL AFTER CLICK: {driver.Url}");
+        Console.WriteLine($"PRODUCT TITLE AFTER CLICK: {driver.Title}");
     }
 
     public void ClickHomeButton()
@@ -82,11 +85,15 @@ public class HomePage
     public void ClickOrders()
     {
         driver.FindElement(orderButton).Click();
+        Console.WriteLine($"PRODUCT URL AFTER CLICK: {driver.Url}");
+        Console.WriteLine($"PRODUCT TITLE AFTER CLICK: {driver.Title}");
     }
 
     public void ClickCart()
     {
         driver.FindElement(cartButton).Click();
+        Console.WriteLine($"PRODUCT URL AFTER CLICK: {driver.Url}");
+        Console.WriteLine($"PRODUCT TITLE AFTER CLICK: {driver.Title}");
     }
 
     public void ClickShoppingButton()
