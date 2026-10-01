@@ -66,5 +66,5 @@ jobs:
 
       - name: Run tests
         env:
-          CI: false
+          CI: true
         run: dotnet test --no-build --verbosity normal
