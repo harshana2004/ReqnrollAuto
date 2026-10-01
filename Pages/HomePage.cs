@@ -75,8 +75,6 @@ public class HomePage
         ((IJavaScriptExecutor)driver).ExecuteScript(
             "arguments[0].click();",
             button);
-
-        Console.WriteLine($"PRODUCT URL AFTER CLICK: {driver.Url}");
     }
 
 
@@ -93,8 +91,6 @@ public class HomePage
         ((IJavaScriptExecutor)driver).ExecuteScript(
             "arguments[0].click();",
             button);
-
-        Console.WriteLine($"ORDERS URL AFTER CLICK: {driver.Url}");
     }
 
     public void ClickCart()
@@ -105,8 +101,6 @@ public class HomePage
         ((IJavaScriptExecutor)driver).ExecuteScript(
             "arguments[0].click();",
             button);
-
-        Console.WriteLine($"CART URL AFTER CLICK: {driver.Url}");
     }
 
     public void ClickShoppingButton()

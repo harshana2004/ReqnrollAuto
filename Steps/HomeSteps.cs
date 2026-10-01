@@ -1,10 +1,6 @@
 using NUnit.Framework;
 using Reqnroll;
 
-
-
-
-
 [Binding]
 public class HomeSteps
 {
